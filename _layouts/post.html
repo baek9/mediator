@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
+  <script id="dsq-count-scr" src="//evening-code.disqus.com/count.js" async></script>
   <body itemscope itemtype="http://schema.org/Article">
     {% include header.html %}
     <main class="content" role="main">
@@ -15,7 +16,7 @@
               <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ page.author }}</h4>
               on
               <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
-              {% if page.comments %} • <a href="https://baek9.github.io{{ page.url }}#disqus_thread">0 Comments</a>{% endif %}
+              {% if page.comments %}</br><a href="https://baek9.github.io{{ page.url }}#disqus_thread">0 Comments</a>{% endif %}
               <!-- , tagged on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}} -->
             </div>
           </div>

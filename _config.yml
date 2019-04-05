@@ -17,7 +17,7 @@ float_logo: true # true, false (default)
 # back button
 back_btn: "/assets/images/back_btn.jpg"
 
-# Author
+# author
 name: 'Taeho Nam'
 author: 'Taeho Nam'
 author_image: "/assets/images/author.jpg"
@@ -29,7 +29,11 @@ baseurl: ""
 #used to display twitter cards
 twitter_handle: '@thnam_'
 
-#fill in disqus shortname to use disqus
+# category & tag
+category_dir: category/
+tag_dir: tag/
+
+# fill in disqus shortname to use disqus
 disqus: evening-code
 
 #google_analytics: UA-XXXXX-X

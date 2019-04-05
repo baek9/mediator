@@ -67,12 +67,12 @@ layout: default
 
     <nav class="pagination" role="navigation">
       {% if paginator.next_page %}
-        <a class="newer-posts" href={{ "/page" | prepend: site.baseurl | append: paginator.next_page }}>&larr; Older posts</a>
+        <a class="newer-posts" href={{ "/page" | prepend: site.baseurl | append: paginator.next_page }}>&larr; Older posts&nbsp;&nbsp;</a>
       {% endif %}
       <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
       {% if paginator.previous_page %}
         {% if paginator.page == 2 %}
-          <a class="older-posts" href={{ "/" | prepend: site.baseurl }}>Newer posts &rarr;</a>
+          <a class="older-posts" href={{ "/" | prepend: site.baseurl }}>&nbsp;&nbsp;Newer posts &rarr;</a>
         {% else %}
           <a class="older-posts" href={{ "/page" | prepend: site.baseurl | append: paginator.previous_page }}>Newer posts &rarr;</a>
         {% endif %}
@@ -83,4 +83,70 @@ layout: default
     <!-- {{!! After all the posts, we have the previous/next pagination links }}
     {{pagination}} -->
 
+    <article class="post">
+      <div class="bottom-teaser cf">
+        <div class="isLeft">
+          <h5 class="index-headline featured"><span>CATEGORY</span></h5>
+          <footer class="site-footer">
+            <section class="copyright">
+              {% for category in site.categories %}
+	        <a class="subscribe" href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}">
+                  <span class="tooltip">{{ category | first }}</span>
+                  <span class="tooltip">({{ category | last | size }})</span>
+                </a>
+                </br>
+              {% endfor %}
+            </section>
+	  </footer>
+        </div>
+        <div class="isRight">
+          <h5 class="index-headline featured"><span>TAG</span></h5>
+          <footer class="site-footer">
+            <section class="copyright">
+              {% assign first = site.tags.first %}
+              {% assign max = first[1].size %}
+              {% assign min = max %}
+              {% for tag in site.tags offset:1 %}
+              {% if tag[1].size > max %}
+              {% assign max = tag[1].size %}
+              {% elsif tag[1].size < min %}
+              {% assign min = tag[1].size %}
+              {% endif %}
+              {% endfor %}
+
+              {% if max == min %}
+              {% assign diff = 1 %}
+              {% else %}
+              {% assign diff = max | minus: min %}
+              {% endif %}
+
+              {% for tag in site.tags %}
+              {% assign temp = tag[1].size | minus: min | times: 36 | divided_by: diff %}
+              {% assign base = temp | divided_by: 4 %}
+              {% assign remain = temp | modulo: 4 %}
+              {% if remain == 0 %}
+              {% assign size = base | plus: 9 %}
+              {% elsif remain == 1 or remain == 2 %}
+              {% assign size = base | plus: 9 | append: '.5' %}
+              {% else %}
+              {% assign size = base | plus: 10 %}
+              {% endif %}
+              {% if remain == 0 or remain == 1 %}
+              {% assign color = 5 | plus: base %}
+              {% else %}
+              {% assign color = 6 | plus: base %}
+              {% endif %}
+
+              {% assign arr = "a, b, c, d, e, f" | split: ", " %}
+              {% if color > 9 %}
+              {% assign index = color | minus: 10 %}
+              {% assign color = arr[index] %}
+              {% endif %}
+                <a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag[0] }}" style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
+              {% endfor %}
+	    </section>
+          </footer>
+        </div>
+      </div>
+    </article>
 </main>

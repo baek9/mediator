@@ -6,7 +6,7 @@ gems:
 # Site settings
 title: "evening(code)"
 description: > # this means to ignore newlines until "email:"
-   A Jekyll theme - Medium inspired
+   늦은 밤 개발 일기
 
 email: thn7440@gmail.com
 

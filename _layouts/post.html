@@ -16,8 +16,9 @@
               <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ page.author }}</h4>
               on
               <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
-              {% if page.comments %}</br><a href="https://baek9.github.io{{ page.url }}#disqus_thread">0 Comments</a>{% endif %}
-              <!-- , tagged on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}} -->
+              <section class="post-content"><div class="post-reading"><span class="post-reading-time"></span> read</div></section>
+              {% if page.comments %}<a href="https://baek9.github.io{{ page.url }}#disqus_thread">0 Comments</a>{% endif %}
+              <!-- tagged on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}} -->
             </div>
           </div>
         </div>
@@ -25,9 +26,6 @@
         <br>
         <br>
         <section class="post-content">
-          <div class="post-reading">
-            <span class="post-reading-time"></span> read
-          </div>
           <a name="topofpage"></a>
           {{content}}
         </section>

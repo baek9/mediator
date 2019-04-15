@@ -6,6 +6,7 @@ gems:
 # plugins
   - jekyll-sitemap
 
+plugins_dir: ./_plugins
 
 # site settings
 title: "evening(code)"

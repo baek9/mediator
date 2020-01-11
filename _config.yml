@@ -19,6 +19,9 @@ email: thn7440@gmail.com
 logo: "/assets/images/df_logo.jpg"
 float_logo: true # true, false (default)
 
+# timezone
+timezone: Asia/Seoul
+
 # back button
 back_btn: "/assets/images/back_btn.jpg"
 

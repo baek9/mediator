@@ -12,7 +12,6 @@ plugins_dir: ./_plugins
 title: "evening(code)"
 description: > # this means to ignore newlines until "email:"
    늦은 밤 개발 일기
-
 email: thn7440@gmail.com
 
 # blog logo
@@ -30,10 +29,11 @@ name: 'Taeho Nam'
 author: 'Taeho Nam'
 author_image: "/assets/images/author.jpg"
 
-paginate:	5
+paginate: 5
 
 url: "http://baek9.github.io" # the base hostname & protocol for your site
 baseurl: ""
+
 #used to display twitter cards
 twitter_handle: '@thnam_'
 
@@ -48,12 +48,19 @@ disqus: evening-code
 
 # social icons and sharing options
 social:
-  - icon:	twitter
-    url:	https://twitter.com/thnam_
+  - icon: twitter
+    url: https://twitter.com/thnam_
     desc: Follow me on twitter
     share_url: http://twitter.com/share
     share_title: ?text=
     share_link: "&amp;url="
+
+  - icon: github
+    url: https://github.com/baek9
+    desc: Fork me on github
+    share_url:
+    share_title:
+    share_link:
 
 #  - icon:	facebook
 #    url:	https://facebook.com/???
@@ -61,17 +68,3 @@ social:
 #    share_url: https://www.facebook.com/sharer.php
 #    share_title: ?t=
 #    share_link: "&amp;u="
-
-  - icon:	github
-    url:	https://github.com/baek9
-    desc:	Fork me on github
-    share_url:
-    share_title:
-    share_link:
-
-#  - icon:	google-plus
-#    url:	https://google.com/???
-#    desc:	Add me on google+
-#    share_url:
-#    share_title:
-#    share_link:

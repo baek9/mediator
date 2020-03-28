@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
+
 <body itemscope itemtype="http://schema.org/Article">
   {% include header.html %}
   <main class="content" role="main">
@@ -47,7 +48,8 @@
           <footer class="site-footer">
             <section class="copyright">
               {% for category in site.categories %}
-                <a class="subscribe" onclick="setHash(this);" hash="{{ category | first }}" href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}">
+              <a class="subscribe" onclick="setHash(this);" hash="{{ category | first }}"
+                href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}">
                 <span class="tooltip">{{ category | first }}</span>
                 <span class="tooltip">({{ category | last | size }})</span>
               </a>
@@ -99,9 +101,7 @@
               {% assign index = color | minus: 10 %}
               {% assign color = arr[index] %}
               {% endif %}
-              <a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag[0] }}"
-                 onclick="setHash(this);"
-                 hash="{{ tag[0] }}"
+              <a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag[0] }}" onclick="setHash(this);" hash="{{ tag[0] }}"
                 style="font-size: {{ size }}pt; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
               {% endfor %}
             </section>
@@ -113,10 +113,11 @@
   {% include footer.html %}
   {% include javascripts.html %}
 
-<script>
-function setHash(obj) {
-  postList.hash = decodeURI(obj.getAttribute("hash"));
-}
-</script>
+  <script>
+    function setHash(obj) {
+      postList.hash = decodeURI(obj.getAttribute("hash"));
+    }
+  </script>
 </body>
+
 </html>

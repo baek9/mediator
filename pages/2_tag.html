@@ -29,13 +29,13 @@ type: page
     }
   });
 
-  postList.hash =decodeURI(window.location.hash.substr(1)); 
+  postList.hash = decodeURI(window.location.hash.substr(1));
 
   axios.get('{{ root_url }}/posts.json')
-  .then(function (response) {
-    postList.posts = response.data.posts;
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+    .then(function (response) {
+      postList.posts = response.data.posts;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 </script>

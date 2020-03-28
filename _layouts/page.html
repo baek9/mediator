@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-
 <body itemscope itemtype="http://schema.org/Article">
   {% include header.html %}
   <main class="content" role="main">
@@ -72,13 +71,11 @@
               {% assign min = tag[1].size %}
               {% endif %}
               {% endfor %}
-
               {% if max == min %}
               {% assign diff = 1 %}
               {% else %}
               {% assign diff = max | minus: min %}
               {% endif %}
-
               {% for tag in site.tags %}
               {% assign temp = tag[1].size | minus: min | times: 36 | divided_by: diff %}
               {% assign base = temp | divided_by: 4 %}
@@ -95,7 +92,6 @@
               {% else %}
               {% assign color = 6 | plus: base %}
               {% endif %}
-
               {% assign arr = "a, b, c, d, e, f" | split: ", " %}
               {% if color > 9 %}
               {% assign index = color | minus: 10 %}
@@ -112,12 +108,10 @@
   </main>
   {% include footer.html %}
   {% include javascripts.html %}
-
   <script>
     function setHash(obj) {
       postList.hash = decodeURI(obj.getAttribute("hash"));
     }
   </script>
 </body>
-
 </html>

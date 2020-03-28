@@ -19,12 +19,9 @@ layout: default
   </div>
 </header>
 
-
 <main class="content" role="main">
-
   {% if site.tags.featured %}
   <h5 class="index-headline featured"><span>Featured</span></h5>
-
   <div class="container featured">
     {% for post in site.tags.featured %}
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
@@ -44,10 +41,8 @@ layout: default
     </article>
     {% endfor %}
   </div>
-
   <h5 class="index-headline normal"><span>Regular</span></h5>
   {% endif %}
-
   <div class="cf frame">
     {% for post in paginator.posts %}
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
@@ -67,7 +62,6 @@ layout: default
     </article>
     {% endfor %}
   </div>
-
   <nav class="pagination" role="navigation">
     {% if paginator.next_page %}
     <a class="newer-posts" href={{ "/page" | prepend: site.baseurl | append: paginator.next_page }}>&larr; Older
@@ -83,7 +77,6 @@ layout: default
     {% endif %}
     {% endif %}
   </nav>
-
 
   <!-- {{!! After all the posts, we have the previous/next pagination links }}
     {{pagination}} -->
@@ -118,13 +111,11 @@ layout: default
             {% assign min = tag[1].size %}
             {% endif %}
             {% endfor %}
-
             {% if max == min %}
             {% assign diff = 1 %}
             {% else %}
             {% assign diff = max | minus: min %}
             {% endif %}
-
             {% for tag in site.tags %}
             {% assign temp = tag[1].size | minus: min | times: 36 | divided_by: diff %}
             {% assign base = temp | divided_by: 4 %}
@@ -141,7 +132,6 @@ layout: default
             {% else %}
             {% assign color = 6 | plus: base %}
             {% endif %}
-
             {% assign arr = "a, b, c, d, e, f" | split: ", " %}
             {% if color > 9 %}
             {% assign index = color | minus: 10 %}
